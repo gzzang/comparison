@@ -13,20 +13,29 @@ def function1():
         b1 = np.zeros(m1)
         for i, v in enumerate(a):
             b1[i] = np.sqrt(v)
+    return b1
 
 
 def function2():
     for _ in range(n):
         b2 = np.array([np.sqrt(v) for v in a])
+    return b2
 
 
 def function3():
     ver = np.vectorize(np.sqrt)
     for _ in range(n):
         b3 = ver(a)
+    return b3
 
 
-function_list = [function1, function2, function3]
+def function4():
+    for _ in range(n):
+        b4 = np.sqrt(a)
+    return b4
+
+
+function_list = [function1, function2, function3, function4]
 
 n = int(1000)
 m1 = 1000
@@ -38,6 +47,7 @@ for i, function in enumerate(function_list):
     end_time = time.time()
     print(f'{i}:{end_time - start_time}')
 
-# 0:1.9410476684570312
-# 1:1.7639796733856201
-# 2:1.0269076824188232
+# 0:2.0077333450317383
+# 1:1.8613100051879883
+# 2:0.9722146987915039
+# 3:0.001993894577026367
