@@ -31,7 +31,13 @@ def function3():
     return b3
 
 
-function_list = [function1, function2, function3]
+def function4():
+    for _ in range(n):
+        b4 = np.triu(np.reshape(np.tile(np.arange(m1), m1) - np.repeat(np.arange(m1), m1), (m1, m1)))
+    return b4
+
+
+function_list = [function1, function2, function3, function4]
 
 n = int(1)
 m1 = 500
@@ -42,6 +48,7 @@ for ii, function in enumerate(function_list):
     end_time = time.time()
     print(f'{ii}:{end_time - start_time}')
 
-# 0:0.5370464324951172
-# 1:0.3959846496582031
-# 2:0.017927885055541992
+# 0:0.3749988079071045
+# 1:0.3709754943847656
+# 2:0.015956878662109375
+# 3:0.001995086669921875
